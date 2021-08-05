@@ -32,3 +32,6 @@ pip3-install-toml:
 
 etc-ansible-hosts:
     cat /etc/ansible/hosts
+
+ping:
+    ansible -m ping '*'

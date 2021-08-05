@@ -1,0 +1,34 @@
+
+# ansible python module location = /usr/local/opt/ansible/libexec/lib/python3.9/site-packages/ansible
+ansible-inventory-version:
+    ansible-inventory --version
+
+ansible-inventory-help:
+    ansible-inventory --help
+
+ansible-inventory-graph:
+    ansible-inventory --graph
+
+ansible-inventory-graph-vvvv:
+    ansible-inventory --graph -vvvv
+
+ansible-inventory-graph-vars:
+    ansible-inventory --graph --vars
+
+ansible-inventory-list:
+    ansible-inventory --list
+
+ansible-inventory-list-vvvv:
+    ansible-inventory --list -vvvv
+
+ansible-inventory-list-toml:
+    ansible-inventory --list --toml
+
+ansible-inventory-list-yaml:
+    ansible-inventory --list --yaml
+
+pip3-install-toml:
+    /usr/local/opt/ansible/libexec/bin/pip3 install toml
+
+etc-ansible-hosts:
+    cat /etc/ansible/hosts

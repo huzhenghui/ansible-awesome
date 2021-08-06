@@ -1,0 +1,23 @@
+install-ansible-consul:
+    ansible-galaxy install brianshumate.consul
+
+host-pattern:
+    echo "${host_pattern}"
+
+ping:
+    ansible -m ping "${host_pattern}"
+
+ansible-playbook-list-hosts:
+    ansible-playbook --list-hosts ./site.yml
+
+ansible-playbook-list-tags:
+    ansible-playbook --list-tags ./site.yml
+
+ansible-playbook-list-tasks:
+    ansible-playbook --list-tasks ./site.yml
+
+ansible-playbook-syntax-check:
+    ansible-playbook --syntax-check ./site.yml
+
+ansible-playbook-check:
+    ansible-playbook --check ./site.yml

@@ -1,0 +1,19 @@
+---
+# File: site.yml - Example Consul site playbook
+
+- name: Assemble Consul cluster
+  hosts: "{{ lookup('env', 'host_pattern') }}"
+  any_errors_fatal: true
+  become: true
+  become_user: root
+  vars:
+    consul_version: "1.10.1"
+    consul_bind_address: "127.0.0.1"
+    consul_advertise_address: "127.0.0.1"
+    consul_node_role: "bootstrap"
+  roles:
+    - { role: brianshumate.consul }
+      
+  tasks:
+  - name: Start consul
+    service: name=consul state=started enabled=yes

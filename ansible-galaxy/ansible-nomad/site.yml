@@ -1,0 +1,20 @@
+---
+# File: site.yml - Example nomad site playbook
+
+- name: Installing Nomad
+  hosts: "{{ lookup('env', 'host_pattern') }}"
+  become: yes
+  become_user: root
+  vars:
+      nomad_version: "1.1.3"
+      nomad_bind_address: "127.0.0.1"
+      nomad_advertise_address: "127.0.0.1"
+      nomad_use_consul: True
+      nomad_node_role: "both"
+      nomad_bootstrap_expect: 1
+  roles:
+    - { role: brianshumate.nomad }
+
+  tasks:
+    - name: Start nomad
+      service: name=nomad state=started enabled=yes
